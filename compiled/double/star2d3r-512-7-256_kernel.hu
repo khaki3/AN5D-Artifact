@@ -1,0 +1,9 @@
+#include "cuda.h"
+
+__global__ void kernel0_7(double *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_6(double *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_5(double *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_4(double *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_3(double *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_2(double *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_1(double *A, int dimsize, int timestep, int c0);

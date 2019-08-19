@@ -1,0 +1,15 @@
+#include "cuda.h"
+
+__global__ void kernel0_13(float *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_12(float *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_11(float *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_10(float *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_9(float *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_8(float *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_7(float *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_6(float *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_5(float *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_4(float *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_3(float *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_2(float *A, int dimsize, int timestep, int c0);
+__global__ void kernel0_1(float *A, int dimsize, int timestep, int c0);
