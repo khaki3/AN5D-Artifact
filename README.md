@@ -1,8 +1,10 @@
 # AN5D-Artifact
 
-We evaluated the generated code by our framework AN5D (which is available at https://github.com/khaki3/AN5D). Our artifact repository (https://github.com/khaki3/AN5D-Artifact) contains the original code converted to CUDA code and all "Tuned" code which are evaluated for our paper. 
+This repository provides the artifact to manifest our paper "AN5D: Automated Stencil Framework for High-Degree Temporal Blocking on GPUs" (to be presented at CGO 2020). We evaluated the generated code by our framework AN5D (which is available at https://github.com/khaki3/AN5D). This artifact repository (https://github.com/khaki3/AN5D-Artifact) contains the original code converted to CUDA code and all "Tuned" code which are evaluated for our paper.
 
-[Install]
+The artifacts for "Loop Tiling", "Hybrid Tiling" and "STENCILGEN" code are separately presented at https://github.com/khaki3/StencilBench/tree/const and https://github.com/khaki3/IEEE2017.
+
+## Install
 
 At first, clone AN5D to your local machine:
 
@@ -18,7 +20,7 @@ Then, build it by following commands:
 % CC=gcc-4.8 CXX=g++-4.8 ./configure && make && make install
 ```
 
-[Evaluation]
+## Evaluation
 
 First, clone our artifact repository:
 
@@ -53,7 +55,7 @@ To execute benchmarks with Tuned configuration:
 (The last two commands show the results. The variable REGNUM can be chosen from 0(unrestricted)/32/64/96 to limit register use per thread. The variable GPUNAME must be v100 or p100.)
 
 
-[Parameter Customizing]
+## Parameter Customizing
 
 AN5D can be used as follows:
 
@@ -99,6 +101,6 @@ Each benchmark accepts following options:
 -h	Show this usage
 ```
 
-[Performance Model]
+## Performance Model
 
 Model_P100.xlsm and Model_V100.xlsm are macro-enabled Excel sheets which implement our performance model. Parameter search for one stencil can be done using the "Parameter Sweep" button in the "Formula" sheet and the "Extract Top" button on the same sheet will automatically extract the top 5 configurations for all stencils. The "csv" files in the compile folder of the repository are generated in this way.
