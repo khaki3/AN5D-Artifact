@@ -6,27 +6,35 @@ We evaluated the generated code by our framework AN5D (which is available at htt
 
 At first, clone AN5D to your local machine:
 
+```
 % git clone 'https://github.com/khaki3/AN5D' && cd AN5D
+```
 
 Then, build it by following commands:
 
+```
 % ./get_submodules.sh && ./autogen.sh
 
 % CC=gcc-4.8 CXX=g++-4.8 ./configure && make && make install
-
+```
 
 [Evaluation]
 
 First, clone our artifact repository:
 
+```
 % git clone 'https://github.com/khaki3/AN5D-Artifact' && cd AN5D-Artifact
+```
 
 To execute benchmarks with Sconf configuration:
 
+```
 % ./run_sconf.sh
+```
 
 To execute benchmarks with Tuned configuration:
 
+```
 % cd compiled
 
 % export GPUNAME=v100
@@ -40,6 +48,7 @@ To execute benchmarks with Tuned configuration:
 % cat $GPUNAME/float_run.csv 
 
 % cat $GPUNAME/double_run.csv 
+```
 
 (The last two commands show the results. The variable REGNUM can be chosen from 0(unrestricted)/32/64/96 to limit register use per thread. The variable GPUNAME must be v100 or p100.)
 
@@ -48,11 +57,13 @@ To execute benchmarks with Tuned configuration:
 
 AN5D can be used as follows:
 
+```
 % an5d --bt=4 --bs1=64 --bs2=16 --sl=256 star3d1r.c
 
 % nvcc --use_fast_math -gencode=arch=compute_60,code=sm_60 -gencode=arch=compute_70,code=sm_70 -Xptxas -v -Xcompiler -fopenmp -O3 ./star3d1r_*.cu
 
 % ./a.out -t 8 -s 256 -n 2 -c
+```
 
 AN5D supports the following options:
 
