@@ -42,15 +42,15 @@ COMPILE ()
 
             echo $outpath
 
-            TMPDIR="$(mktemp -d)"
-            cp common.h $TMPDIR
-            cp $input $TMPDIR/src.c
-            cd $TMPDIR
+            TEMP="$(mktemp -d)"
+            cp common.h $TEMP
+            cp $input $TEMP/src.c
+            cd $TEMP
             an5d -D SB_TYPE=$sb_type $an5d_option --bt=$t src.c
             nvcc -D SB_TYPE=$sb_type ${NVCC_FLAGS} $regopt src_*.cu 2>&1 | egrep 'register|sm_|spill|ptxas'
             cd -
-            # cp $TMPDIR/a.out $outpath
-            rm -rf $TMPDIR
+            # cp $TEMP/a.out $outpath
+            rm -rf $TEMP
         done
     done
     done
