@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.0-base
+FROM nvidia/cuda:10.0-devel
 
 RUN apt-get update
 RUN apt-get install -y openssl wget git automake autoconf libtool pkg-config \
@@ -14,8 +14,9 @@ RUN git clone 'https://github.com/khaki3/AN5D' && cd AN5D && \
     && make && make install
 
 RUN git clone 'https://github.com/khaki3/ppcg' && cd ppcg && \
-    ./get_submodules.sh && ./autogen.sh; CC=gcc-4.8 CXX=g++-4.8 ./configure \
-    && make && make install
+    ./autogen.sh; CC=gcc-4.8 CXX=g++-4.8 PET_CFLAGS=-I/usr/local/include \
+    PET_LIBS=/usr/local/lib/libpet.so ./configure --with-pet=system \
+    --with-isl=system && make && make install
 
 RUN git clone 'https://github.com/khaki3/AN5D-Artifact.git'
 
