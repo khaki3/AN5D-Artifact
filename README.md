@@ -4,6 +4,14 @@ This repository provides the artifact to manifest our paper "AN5D: Automated Ste
 
 The artifacts for "Loop Tiling", "Hybrid Tiling" and "STENCILGEN" code are separately presented at https://github.com/khaki3/StencilBench/tree/const and https://github.com/khaki3/IEEE2017.
 
+## Install with nvidia-docker
+We provide Dockerfile to build a container of nvidia-docker. You would find three repositories inside the container for the artifact evaluation.
+```
+% docker build -t an5d/env .
+% docker run -it --rm --pid=host --gpus all an5d/env
+% ls | egrep 'AN5D-Artifact|StencilBench|IEEE2017'
+```
+
 ## Install
 
 At first, clone AN5D to your local machine:
