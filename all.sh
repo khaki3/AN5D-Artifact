@@ -13,8 +13,8 @@ cd compiled
 for regnum in 0 32 64 96; do
     ./nvcc_compile_top5.sh $(nproc) $regnum
     ./run.sh $GPUNAME
-    cat $GPUNAME/float_run.csv >> ../tuned.float.sh
-    cat $GPUNAME/double_run.csv >> ../tuned.double.sh
+    cat $GPUNAME/float_run.csv >> ../tuned.float.log
+    cat $GPUNAME/double_run.csv >> ../tuned.double.log
 done
 
 cd ..
