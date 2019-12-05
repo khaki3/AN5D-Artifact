@@ -89,7 +89,7 @@ done
 
 
 # Final wait
-while [[ `ps -A | grep nvcc | wc -l` -gt 0 ]]
+while [[ `ps -A | grep nvcc | grep -v nvcc_comp | wc -l` -gt 0 ]]
 do
 	echo "Waiting for remaining compilations to finish..."
 	sleep 5
