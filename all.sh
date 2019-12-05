@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GPUNAME=$(nvidia-smi -L | grep -oP '[PV]100' | tr '[PV]' '[pv]')
+GPUNAME=$(nvidia-smi -L | grep -oP '[PV]100' | head -n1 | tr '[PV]' '[pv]')
 
 if [[ -z $GPUNAME ]]
 then
