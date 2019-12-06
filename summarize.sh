@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# if [[ $(whoami)x != rootx ]]; then
-#     echo "Execution is allowed only in the docker container"
-#     exit 1;
-# fi
+if [[ $(whoami)x != rootx ]]; then
+    echo "Execution is allowed only in the docker container"
+    exit 1;
+fi
 
 TUNED_FLOAT_LOG=../AN5D-Artifact/tuned.float.log
 TUNED_DOUBLE_LOG=../AN5D-Artifact/tuned.double.log
